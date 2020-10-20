@@ -1,0 +1,253 @@
+Data types :
+
+Which ever form you represent your data in python language are called data types 
+
+Numbers - int ,float 
+Strings - sequence of characters  - immutable type
+List
+Set
+tuple
+dictionary 
+
+smlist=[1,2,3,4]
+0-1
+2-1
+3-2
+4-3
+
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 3+4
+7
+>>> 5+6
+11
+>>> 3-5
+-2
+>>> 4*8
+32
+>>> 8/2
+4.0
+>>> 8//2
+4
+>>> 9**2
+81
+>>> 10%2
+0
+>>> x=2
+>>> type(x)
+<class 'int'>
+>>> y=-2
+>>> type(y)
+<class 'int'>
+>>> x=0.23455
+>>> type(x)
+<class 'float'>
+>>> y=23.5784
+>>> type(y)
+<class 'float'>
+>>> 123dsd=23
+  File "<stdin>", line 1
+    123dsd=23
+       ^
+SyntaxError: invalid syntax
+>>> sds_=23
+>>> x="python"
+>>> type(x)
+<class 'str'>
+>>> x="1234
+  File "<stdin>", line 1
+    x="1234
+          ^
+SyntaxError: EOL while scanning string literal
+>>> x="1234"
+>>> type(x)
+<class 'str'>
+>>> x+"xyz"
+'1234xyz'
+>>> print(x)
+1234
+>>> x="1234"
+>>> print(x)
+1234
+>>> x+="xyz"
+>>> print(x)
+1234xyz
+>>> x=x+"naveen"
+>>> print(x)
+1234xyznaveen
+>>> ({})
+{}
+>>> {()}
+{()}
+>>> smlist=[1,2,3,"naveen",3.4,4.5]
+>>> print(type(smlist)
+...
+... ;
+  File "<stdin>", line 3
+    ;
+    ^
+SyntaxError: invalid syntax
+>>> print(type(smlist))
+<class 'list'>
+>>> smlist.append("Python")
+>>> print(smlist)
+[1, 2, 3, 'naveen', 3.4, 4.5, 'Python']
+>>> sowmya=[1,2,3,4]
+>>> print(type(sowmya))
+<class 'list'>
+>>> smlist.sort()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '<' not supported between instances of 'str' and 'int'
+>>> sowmya.sort()
+>>> print(sowmya)
+[1, 2, 3, 4]
+>>> sowmya=[5,1,8,2,5,1,0]
+>>> sowmya.sort()
+>>> print(sowmya)
+[0, 1, 1, 2, 5, 5, 8]
+>>> sowmya=[5,1,8,2,5,1,0,0.23]
+>>> sowmya.sort()
+>>> print(sowmya)
+[0, 0.23, 1, 1, 2, 5, 5, 8]
+>>> sowmya.append("naveen")
+>>> print(sowmya)
+[0, 0.23, 1, 1, 2, 5, 5, 8, 'naveen']
+>>> sowmya.extend([1,2,3,4])
+>>> print(sowmya)
+[0, 0.23, 1, 1, 2, 5, 5, 8, 'naveen', 1, 2, 3, 4]
+>>> sowmya.extend(1,2,3,4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: extend() takes exactly one argument (4 given)
+>>> sowmya.extend([1,2,3,4])
+>>> print(sowmya)
+[0, 0.23, 1, 1, 2, 5, 5, 8, 'naveen', 1, 2, 3, 4, 1, 2, 3, 4]
+>>> dir({})
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>> sowmya=[1,2,3,4]
+>>> naveen=list()
+>>> type(naveen)
+<class 'list'>
+>>> len(naveen)
+0
+>>> len(sowmya)
+4
+>>> len(smlist)
+7
+>>> str(naveen)
+'[]'
+>>> str(sowmya)
+'[1, 2, 3, 4]'
+>>> print(sowmya)
+[1, 2, 3, 4]
+>>> x=str(sowmya)
+>>> print(x)
+[1, 2, 3, 4]
+>>> list({})
+[]
+>>> dir({})
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> print(sowmya)
+[1, 2, 3, 4]
+>>> sowmya.clear()
+>>> print(sowmya)
+[]
+>>> sowmya.copy()
+[]
+>>> x=sowmya.copy()
+>>> print(x)
+[]
+>>> print(smlist)
+[1, 2, 3, 'naveen', 3.4, 4.5, 'Python']
+>>> smlist.extend([3,3,3])
+>>> smlist.count(3)
+4
+>>> print(smlist)
+[1, 2, 3, 'naveen', 3.4, 4.5, 'Python', 3, 3, 3]
+>>> smlist.count(1)
+1
+>>> smlist.count(2)
+1
+>>> smlist.count("naveen")
+1
+>>> smlist.count("python")
+0
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> smlist.index(1)
+0
+>>> smlist.index(2)
+1
+>>> smlist.index(3)
+2
+>>> smlist.index("naveen")
+3
+>>> smlist.index(3.4)
+4
+>>> smlist.index(4.5)
+5
+>>> smlist.index("Python")
+6
+>>> smlist.index(3)
+2
+>>> smlist.insert(2,3)
+>>> print(smlist)
+[1, 2, 3, 3, 'naveen', 3.4, 4.5, 'Python', 3, 3, 3]
+>>> smlist.index("Python")
+7
+>>> smlist.insert(0,3)
+>>> smlist.index("Python")
+8
+>>> print(smlist)
+[3, 1, 2, 3, 3, 'naveen', 3.4, 4.5, 'Python', 3, 3, 3]
+>>> smlist.pop()
+3
+>>> print(smlist)
+[3, 1, 2, 3, 3, 'naveen', 3.4, 4.5, 'Python', 3, 3]
+>>> smlist.pop()
+3
+>>> smlist.pop()
+3
+>>> print(smlist)
+[3, 1, 2, 3, 3, 'naveen', 3.4, 4.5, 'Python']
+>>> smlist.remove(3)
+>>> print(smlist)
+[1, 2, 3, 3, 'naveen', 3.4, 4.5, 'Python']
+>>> smlist.remove(3)
+>>> print(smlist)
+[1, 2, 3, 'naveen', 3.4, 4.5, 'Python']
+>>> smlist.remove(3)
+>>> print(smlist)
+[1, 2, 'naveen', 3.4, 4.5, 'Python']
+>>> smlist.remove("naveen")
+>>> print(smlist)
+[1, 2, 3.4, 4.5, 'Python']
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> smlist
+[1, 2, 3.4, 4.5, 'Python']
+>>> smlist.reverse()
+>>> smllist
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'smllist' is not defined
+>>> smlist
+['Python', 4.5, 3.4, 2, 1]
+>>> smlist.__add__(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate list (not "int") to list
+>>> smlist.__add__([1,2,3,4])
+['Python', 4.5, 3.4, 2, 1, 1, 2, 3, 4]
+>>> smlist.__iadd__(0,"naveen")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: expected 1 argument, got 2
+>>> smlist.__iadd__([0,"naveen"])
+['Python', 4.5, 3.4, 2, 1, 0, 'naveen']
+>>> dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>>
