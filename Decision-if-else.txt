@@ -1,0 +1,109 @@
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x,y=4,5
+>>> x
+4
+>>> y
+5
+>>> if x>y:
+... print("x")
+  File "<stdin>", line 2
+    print("x")
+    ^
+IndentationError: expected an indented block
+>>> if x>y:
+...  print("x")
+... else:
+...  print("y")
+...
+y
+>>> if x>y:
+...  print("x")
+...
+>>>
+>>> if x>y:
+...  print("if")
+... elif y>x:
+...  print("elseif")
+...
+elseif
+>>> if x>y:
+...  print("if")
+... elif x>=y:
+...  print("elif")
+... else:
+...  print("else")
+...
+else
+>>> if x<y:
+...  print("if")
+...   if x<=y:
+  File "<stdin>", line 3
+    if x<=y:
+    ^
+IndentationError: unexpected indent
+>>> if x<y:
+...  print("else")
+...  if x<=y:
+...   print("we are in internal if ")
+...
+else
+we are in internal if
+>>> x
+4
+>>> y
+5
+>>> if x==4 and y==5:
+...  print("in if")
+...
+in if
+>>> if x>4 and y>5:
+...  print("in if")
+...
+>>>
+>>> if x==4 and y>5:
+...  print("in true and false")
+...
+>>>
+>>> x==4 and y>5
+False
+>>> if x!=4 and y!=5:
+...  print("hello")
+...
+>>> if x!=4 or y!=5:
+...  print x
+  File "<stdin>", line 2
+    print x
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(x)?
+>>> if x!=4 or y!=5:
+...     print(x)
+...
+>>> if x==4 or y>5:
+...  print(x)
+...
+4
+>>> if x>4 or y>=5:
+...  print(x)
+...
+4
+>>> if x>=4 or y>=5:
+...  print(x)
+...
+4
+>>>
+
+
+elevator=5
+ if elevator==1:
+   go to 1
+ elif elevator==2:
+   go to 2
+ elif elevator==3:
+   go to 3
+ elif elevator == 4:
+  go to 4
+ elif elevator ==5 :
+  go to 5
+ else:
+  go to 0

@@ -1,0 +1,373 @@
+﻿Todays class 
+set
+tuple
+dictionary
+
+
+Set - Mutable 
+Set doesn't allow duplicates 
+U
+
+
+x=1,2,3,4
+y=1,2,3,4,6,7,8
+x is subset of y
+y is not subset of x
+
+
+Set:
+
+
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x=set()
+>>> type(x)
+<class 'set'>
+>>> dir(set)
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>> x.add(1)
+>>> x
+{1}
+>>> x.add(2)
+>>> x
+{1, 2}
+>>> x.add(2)
+>>> x
+{1, 2}
+>>> x.add("Python")
+>>> x
+{1, 2, 'Python'}
+>>> x.add("Python")
+>>> x
+{1, 2, 'Python'}
+>>> x.clear()
+>>> x
+set()
+>>> x.add("Python")
+>>> x.add(2)
+>>> x.add(1)
+>>> x
+{'Python', 2, 1}
+>>> x.difference
+<built-in method difference of set object at 0x03470338>
+>>> x.difference()
+{'Python', 2, 1}
+>>> y=set(["Python",2,3])
+>>> x.difference(y)
+{1}
+>>> dir(x)
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>> x.difference_update(y)
+>>> x
+{1}
+>>> y
+{'Python', 2, 3}
+>>> y.difference_update(x)
+>>> y
+{'Python', 2, 3}
+>>> y.discard(2)
+>>> y
+{'Python', 3}
+>>> y.discard("Python")
+>>> y
+{3}
+>>> x
+{1}
+>>> y
+{3}
+>>> x.intersection(y)
+set()
+>>> x
+{1}
+>>> y
+{3}
+>>> x.add(2)
+>>> y.add(2)
+>>> x.intersection(y)
+{2}
+>>> dir(set)
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>> x
+{1, 2}
+>>> y
+{2, 3}
+>>> x.intersection_update(y)
+>>> x
+{2}
+>>> x.isdisjoint(y)
+False
+>>> x
+{2}
+>>> y
+{2, 3}
+>>> y.issubset(x)
+False
+>>> x.issubset(y)
+True
+>>> x.issuperset(y)
+False
+>>> y.issuperset(x)
+True
+>>> x
+{2}
+>>> y
+{2, 3}
+>>> y.pop()
+2
+>>> y.pop()
+3
+>>> dir(set)
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>> y.add(2)
+>>> y.add(3)
+>>> y.add(4)
+>>> y
+{2, 3, 4}
+>>> y.remove(3)
+>>> y
+{2, 4}
+>>> x
+{2}
+>>> y
+{2, 4}
+>>> x.symmetric_difference(y)
+{4}
+>>> x
+{2}
+>>> y
+{2, 4}
+>>> y.symmetric_difference(x)
+{4}
+>>> y.symmetric_difference_update(x)
+>>> y
+{4}
+>>> x
+{2}
+>>> y
+{4}
+>>> x.union(y)
+{2, 4}
+>>> x
+{2}
+>>> y
+{4}
+>>> dir(set)
+['__and__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>> x
+{2}
+>>> y
+{4}
+>>> x.update(set([1,2,3,4,5]))
+>>> x
+{1, 2, 3, 4, 5}
+>>> y.update(x)
+>>> y
+{1, 2, 4, 3, 5}
+>>>
+
+
+
+
+
+
+tuple- immutable 
+
+
+>>> x=()
+>>> type(x)
+<class 'tuple'>
+>>> y=tuple()
+>>> y
+()
+>>> type(y)
+<class 'tuple'>
+>>> dir(tuple)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+>>> x=(1,2,3,4,5)
+>>> x
+(1, 2, 3, 4, 5)
+>>> x[0]
+1
+>>> x[0]=2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> del x[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object doesn't support item deletion
+>>> z=[1,2,3,4,5]
+>>> z
+[1, 2, 3, 4, 5]
+>>> x[0]
+1
+>>> x[1]
+2
+>>> x[2]
+3
+>>> x[3]
+4
+>>> x[4]
+5
+>>> del x[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object doesn't support item deletion
+>>> del z[4]
+>>> z
+[1, 2, 3, 4]
+>>> z[3]="naveen"
+>>> z
+[1, 2, 3, 'naveen']
+>>> x[1]="naveen"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> dir(tuple)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+>>> x
+(1, 2, 3, 4, 5)
+>>> x.count(1)
+1
+>>> y=(1,1,1,2,3,4,4,4,4,4,4)
+>>> y
+(1, 1, 1, 2, 3, 4, 4, 4, 4, 4, 4)
+>>> y.count(4)
+6
+>>> y.index(1)
+0
+>>> y.index(2)
+3
+>>>
+
+
+dictionary - mutable 
+Till 2.x version dictionary is unordered
+from 3.8 dictionary is ordered
+
+
+dictionary will be in the form ok key and value pairs 
+you won't have duplicate keys in dictionary 
+if you try to duplicate it , it will get updated 
+
+
+>>> x={}
+>>> type(x)
+<class 'dict'>
+>>> y=dict()
+>>> type(y)
+<class 'dict'>
+>>> x["1"]="naveen"
+>>> x["2"]="krishna"
+>>> x["3"]="gowtham"
+>>> print(x)
+{'1': 'naveen', '2': 'krishna', '3': 'gowtham'}
+>>> x["1"]="Python"
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham'}
+>>> x[1]="Naveen"
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen'}
+>>> x[0.23]="dummy"
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy'}
+>>> x[list([1,2,3,4])]=dict({"naveen":"python"})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> x[[1,2,3,4]]=dict({"naveen":"python"})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> x[set([1,2,3,4])]=dict({"naveen":"python"})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'set'
+>>> x[""]="empty"
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty'}
+>>> x[tuple(1,2,3,4)]="empty"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: tuple expected at most 1 argument, got 4
+>>> x[tuple([1,2,3,4])]="empty"
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> dir(dict)
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> x.get("1")
+'Python'
+>>> x.get("2")
+'krishna'
+>>> x.get("2")
+'krishna'
+>>> x.get("3")
+'gowtham'
+>>> x.get(1)
+'Naveen'
+>>> x.get(0.23)
+'dummy'
+>>> x.get("")
+'empty'
+>>> x.get((1,2,3,4))
+'empty'
+>>> x.items()
+dict_items([('1', 'Python'), ('2', 'krishna'), ('3', 'gowtham'), (1, 'Naveen'), (0.23, 'dummy'), ('', 'empty'), ((1, 2, 3, 4), 'empty')])
+>>> x.items()[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict_items' object is not subscriptable
+>>> x.keys()
+dict_keys(['1', '2', '3', 1, 0.23, '', (1, 2, 3, 4)])
+>>> x.values()
+dict_values(['Python', 'krishna', 'gowtham', 'Naveen', 'dummy', 'empty', 'empty'])
+>>> x
+{'1': 'Python', '2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> x.pop()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: pop expected at least 1 argument, got 0
+>>> x.pop("1")
+'Python'
+>>> x
+{'2': 'krishna', '3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> x.pop(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 2
+>>> x.pop("2")
+'krishna'
+>>> x
+{'3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> x.popitem(('3', 'gowtham'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: popitem() takes no arguments (1 given)
+>>> x.popitem({'3':'gowtham'})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: popitem() takes no arguments (1 given)
+>>> x.popitem('3':'gowtham')
+  File "<stdin>", line 1
+    x.popitem('3':'gowtham')
+                 ^
+SyntaxError: invalid syntax
+>>> for i in x.items():
+...     x.popitem(i)
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: popitem() takes no arguments (1 given)
+>>> x
+{'3': 'gowtham', 1: 'Naveen', 0.23: 'dummy', '': 'empty', (1, 2, 3, 4): 'empty'}
+>>> x.popitem()
+((1, 2, 3, 4), 'empty')
+>>> x.popitem()
+('', 'empty')
+>>> x
+{'3': 'gowtham', 1: 'Naveen', 0.23: 'dummy'}
+>>> dir(dict)
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>>
